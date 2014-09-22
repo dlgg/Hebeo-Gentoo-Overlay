@@ -63,7 +63,9 @@ all_ruby_install() {
 	fperms 0755 ${DEST_DIR}/bin/gitlab-projects || die
 	fperms 0755 ${DEST_DIR}/bin/gitlab-shell || die
 	fperms 0755 ${DEST_DIR}/bin/check || die
-	fperms 0755 ${DEST_DIR}/hooks/update || die
+	fperms 0755 ${DEST_DIR}/bin/create-hooks || die
+	fperms 0755 ${DEST_DIR}/hooks/pre-receive || die
+	fperms 0755 ${DEST_DIR}/hooks/post-receive || die
 	fowners ${GIT_USER} ${DEST_DIR}/gitlab-shell.log
 }
 
