@@ -14,6 +14,7 @@ DESCRIPTION="GitLab Shell is a free SSH access and repository management applica
 HOMEPAGE="https://github.com/gitlabhq/gitlab-shell"
 LICENSE="MIT"
 SLOT="0"
+KEYWORDS="amd64 x86"
 
 DEPEND="$(ruby_implementation_depend ruby20 '=' -2.0*)
 	dev-vcs/git
