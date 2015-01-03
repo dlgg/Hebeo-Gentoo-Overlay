@@ -51,8 +51,8 @@ GEMS_DEPEND="
 	memcached? ( net-misc/memcached )"
 DEPEND="${GEMS_DEPEND}
 	$(ruby_implementation_depend ruby20 '=' -2.0*)[readline,ssl]
-	dev-vcs/git
-	>=dev-vcs/gitlab-shell-1.9.1
+	>=dev-vcs/git-1.7.10
+	>=dev-vcs/gitlab-shell-1.9.5
 	net-misc/curl
 	virtual/ssh"
 RDEPEND="${DEPEND}
@@ -226,7 +226,7 @@ each_ruby_install() {
 
 	# fix permissions
 	fowners -R ${GIT_USER}:${GIT_GROUP} "${dest}" "${conf}" "${temp}" "${logs}"
-	fperms +x script/rails
+	fperms +x bin/rails
 	fperms o+Xr "${temp}" # Let nginx access the unicorn socket
 
 	## RC scripts ##
